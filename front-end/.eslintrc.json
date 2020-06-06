@@ -39,6 +39,12 @@
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
     "import/no-duplicates": "off",
+    "camelcase": "off",
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelComponents": ["label"],
+      "labelAttributes": ["htmlFor"],
+      "controlComponents": ["input"]
+    }],
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
