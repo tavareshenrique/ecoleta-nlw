@@ -1,12 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, TouchableOpacity, View, Image, Text, SafeAreaView, Linking, TextInput } from 'react-native';
+import {
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Image,
+  Text,
+  SafeAreaView,
+  Linking,
+} from 'react-native';
 import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import api from '../../services/api';
-
 import * as MailComposer from 'expo-mail-composer';
+import api from '../../services/api';
 
 interface Params {
   point_id: number;
@@ -15,6 +22,7 @@ interface Params {
 interface Data {
   point: {
     image: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -23,7 +31,7 @@ interface Data {
   };
   items: {
     title: string;
-  }[]
+  }[];
 }
 
 const Detail: React.FC = () => {
@@ -32,26 +40,28 @@ const Detail: React.FC = () => {
   const routeParams = route.params as Params;
 
   const [data, setData] = useState({} as Data);
- 
+
   useEffect(() => {
     api.get(`points/${routeParams.point_id}`).then(response => {
-      setData(response.data)
+      setData(response.data);
     });
-  }, [])
+  }, [routeParams.point_id]);
 
   const handleNavigateBack = useCallback(() => {
     navigation.goBack();
-  }, []);
+  }, [navigation]);
 
   const handleComposeMail = useCallback(() => {
     MailComposer.composeAsync({
       subject: 'Interresse na coleta de resíduos',
-      recipients: [data.point.email]
-    })
-  }, []);
+      recipients: [data.point.email],
+    });
+  }, [data.point.email]);
 
   const handleWhatsApp = useCallback(() => {
-    Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interessa sobre coleta de resíduos`);
+    Linking.openURL(
+      `whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interessa sobre coleta de resíduos`,
+    );
   }, []);
 
   if (!data.point) {
@@ -59,13 +69,16 @@ const Detail: React.FC = () => {
   }
 
   return (
-    <SafeAreaView style={{flex: 1 }} >
-      <View style={styles.container} >  
-        <TouchableOpacity onPress={handleNavigateBack} >
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
 
-        <Image style={styles.pointImage} source={{ uri: data.point.image }} />
+        <Image
+          style={styles.pointImage}
+          source={{ uri: data.point.image_url }}
+        />
 
         <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>
@@ -74,7 +87,9 @@ const Detail: React.FC = () => {
 
         <View style={styles.address}>
           <Text style={styles.addressTitle}>Endereço</Text>
-          <Text style={styles.addressContent}>{data.point.city}, {data.point.uf}</Text>
+          <Text style={styles.addressContent}>
+            {data.point.city}, {data.point.uf}
+          </Text>
         </View>
       </View>
 
@@ -90,8 +105,8 @@ const Detail: React.FC = () => {
         </RectButton>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default Detail;
 
@@ -122,13 +137,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 8,
-    color: '#6C6C80'
+    color: '#6C6C80',
   },
 
   address: {
     marginTop: 32,
   },
-  
+
   addressTitle: {
     color: '#322153',
     fontFamily: 'Roboto_500Medium',
@@ -139,7 +154,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto_400Regular',
     lineHeight: 24,
     marginTop: 8,
-    color: '#6C6C80'
+    color: '#6C6C80',
   },
 
   footer: {
@@ -148,9 +163,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 32,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
-  
+
   button: {
     width: '48%',
     backgroundColor: '#34CB79',
