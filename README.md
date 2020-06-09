@@ -12,6 +12,12 @@
 
 ---
 
+<p align="center">
+  Ecoleta é um software construído em <strong>NodeJS</strong>, <strong>ReactJs</strong> e <strong>React Native</strong> utilizando <strong>TypeScript</strong> como projeto resultante da <strong>Next Level Week #01</strong> da <a href="https://github.com/Rocketseat">Rocketseat 🚀</a>
+</p>
+
+---
+
 # :floppy_disk: Back-End
 
 <p>Back-End do Ecoleta desenvolvido em <strong>NodeJS</strong> com <strong>TypeScript</strong> durante a <strong>Next Level Week #01</strong></p>
