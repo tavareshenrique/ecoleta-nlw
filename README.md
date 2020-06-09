@@ -79,4 +79,4 @@
 
 # :memo: Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](https://github.com/tavareshenrique/ecoleta-nlw).
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](https://github.com/tavareshenrique/ecoleta-nlw/blob/master/LICENSE.md).
