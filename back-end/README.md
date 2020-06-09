@@ -30,26 +30,26 @@
 # :gear: Configurando
 
 ```shell
-# 1 - Clone o projeto
+# 01. Faça o clone do repositório
 git clone git@github.com:tavareshenrique/ecoleta-nlw.git
-
-# 2- Instale as dependencias do projeto
-yarn
-
-# 3 - Crie um banco no PostgreSQL com o nome:
-nlw
-
-# 4 - Rode as migrations
-yarn knex:migrate
-
-# 5- Rode o comando seed para adicionar os items na tabela de items.
-yarn knex:seed
-
-# 6 - Inicie o projeto
-yarn dev:server
 ```
 
----
+```shell
+# 02. Instale as dependencias do projeto
+yarn
+
+# 03. Crie um banco no PostgreSQL com o nome:
+nlw
+
+# 04. Rode as migrations
+yarn knex:migrate
+
+# 05. Rode o comando seed para adicionar os items na tabela de items.
+yarn knex:seed
+
+# 06. Inicie o projeto
+yarn dev:server
+```
 
 ---
 
