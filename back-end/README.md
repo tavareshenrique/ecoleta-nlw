@@ -22,7 +22,7 @@
 </div>
 
 <p align="center">
-  <strong>Back-End</strong> foi construído utilizando <strong>NodeJS</strong> com <strong>TypeScript.
+  <strong>Back-End</strong> foi construído utilizando <strong>NodeJS</strong> com <strong>TypeScript</strong>.
 </p>
 
 ---
