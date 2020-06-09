@@ -23,9 +23,12 @@
 
 ---
 
-![preview01](./src/assets/previews/01.png)
+<p align="center">
+  <img alt="Preview01" title="Preview01" src="./src/assets/previews/01.png" width="660px" />
+  <img alt="Preview02" title="Preview02" src="./src/assets/previews/02.gif" width="650px" />
+</p>
 
-![preview02](./src/assets/previews/02.gif)
+---
 
 # :information_source: Como Usar
 
