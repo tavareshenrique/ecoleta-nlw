@@ -38,7 +38,7 @@
 
 <p>Mobile do Ecoleta desenvolvido em <strong>React Native</strong> com <strong>TypeScript</strong> durante a <strong>Next Level Week #01</strong></p>
 
-<a href="https://github.com/tavareshenrique/ecoleta-nlw/tree/master/front-end">👉🏼 Clique aqui para acessar 👈🏻</a>
+<a href="https://github.com/tavareshenrique/ecoleta-nlw/tree/master/mobile">👉🏼 Clique aqui para acessar 👈🏻</a>
 
 ---
 
